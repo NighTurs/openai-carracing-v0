@@ -1,16 +1,19 @@
 import argparse
 import os
 from typing import Dict, Any
+from src.config import dump as dump_config
 from src.config import config as default_config
 
 from stable_baselines3 import PPO
 from src.env_wrap import make_env
 from src.common import get_run_dir
 
+
 def train(run_name: str, config: Dict[str, Any]):
     cfg_t = config['train']
     cfg_p = config['preprocess']
     run_dir = get_run_dir(run_name)
+    dump_config(run_dir, config)
     os.makedirs(run_dir, exist_ok=False)
 
     def _make_env(n_envs: int, is_eval: bool):

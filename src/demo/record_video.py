@@ -24,7 +24,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--run_name', required=True,
                         help='Name of the training run')
-    parser.add_argument('--video_length', type=int, default=1000, required=True,
+    parser.add_argument('--video_length', type=int,
+                        default=1000, required=True,
                         help='Timesteps to record')
     args = parser.parse_args()
     record_video(args.run_name, args.video_length)
