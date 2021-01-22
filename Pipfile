@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-# Fixes gym issue #2062
-gym = {git = "https://github.com/NighTurs/gym.git", extras = ["box2d"]}
+gym = {git = "https://github.com/NighTurs/gym.git"}
+box2d-py = "*"
 stable-baselines3 = "*"
 opencv-python = "*"
 tensorboard = "*"
