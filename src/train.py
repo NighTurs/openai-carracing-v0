@@ -5,14 +5,12 @@ from src.config import config as default_config
 
 from stable_baselines3 import PPO
 from src.env_wrap import make_env
-
-RUNS_DIR = './runs'
-
+from src.common import get_run_dir
 
 def train(run_name: str, config: Dict[str, Any]):
     cfg_t = config['train']
     cfg_p = config['preprocess']
-    run_dir = os.path.join(RUNS_DIR, run_name)
+    run_dir = get_run_dir(run_name)
     os.makedirs(run_dir, exist_ok=False)
 
     def _make_env(n_envs: int, is_eval: bool):
