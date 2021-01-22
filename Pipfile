@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+# Fixes gym issue #2062
+gym = {git = "https://github.com/NighTurs/gym.git", extras = ["box2d"]}
+stable-baselines3 = "*"
+opencv-python = "*"
+tensorboard = "*"
+jupyter = "*"
+pyyaml = "*"
+
+[dev-packages]
+flake8 = "*"
+
+[requires]
+python_version = "3.9"

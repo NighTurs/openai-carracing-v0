@@ -1,0 +1,21 @@
+preprocess:
+  # If positive use frame skipping
+  frame_skip: 4
+  # If positive use frame stacking
+  frame_stack: 4
+
+train:
+  # Total steps to train on
+  total_steps: 15000000
+  batch_size: 256
+  # Number of steps per rollout per env
+  n_steps: 1000
+  # Number of epochs per rollout
+  n_epochs: 20
+  # Number of envs to run in parallel
+  n_envs: 24
+  lr: 3.e-5
+  # Do evaluation every N steps
+  eval_freq: 25000
+  # Number of eval episodes
+  n_eval_eps: 20
