@@ -7,7 +7,7 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import VecEnv
 
 
-def load_model(run_name: str) -> Tuple[VecEnv, PPO]:
+def load_model(run_name: str, model_file: str) -> Tuple[VecEnv, PPO]:
     run_dir = get_run_dir(run_name)
     cfg = load(run_dir)['preprocess']
     env = make_env(seed=123,
@@ -16,5 +16,5 @@ def load_model(run_name: str) -> Tuple[VecEnv, PPO]:
                    frame_skip=cfg['frame_skip'],
                    frame_stack=cfg['frame_stack'],
                    is_eval=True)
-    model = PPO.load(os.path.join(run_dir, 'best_model.zip'))
+    model = PPO.load(os.path.join(run_dir, model_file))
     return env, model
