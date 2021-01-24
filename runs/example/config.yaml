@@ -1,0 +1,12 @@
+preprocess:
+  frame_skip: 0
+  frame_stack: 4
+train:
+  batch_size: 256
+  eval_freq: 100000
+  lr: 3.0e-05
+  n_envs: 24
+  n_epochs: 20
+  n_eval_eps: 40
+  n_steps: 1000
+  total_steps: 15000000

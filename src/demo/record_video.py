@@ -14,7 +14,7 @@ def record_video(run_name: str, model_file: str, video_length: int):
                            name_prefix='video')
     obs = env.reset()
     for _ in range(video_length + 1):
-        action, _ = model.predict(obs, deterministic=True)
+        action, _ = model.predict(obs, deterministic=False)
         obs, _, _, _ = env.step(action)
         env.render()
     env.close()

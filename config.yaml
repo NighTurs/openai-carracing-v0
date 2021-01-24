@@ -1,6 +1,6 @@
 preprocess:
   # If positive use frame skipping
-  frame_skip: 4
+  frame_skip: 0
   # If positive use frame stacking
   frame_stack: 4
 
@@ -16,6 +16,6 @@ train:
   n_envs: 24
   lr: 3.e-5
   # Do evaluation every N steps
-  eval_freq: 25000
+  eval_freq: 100000
   # Number of eval episodes
-  n_eval_eps: 20
+  n_eval_eps: 40

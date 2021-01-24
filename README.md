@@ -3,6 +3,8 @@
 Reinforcement learning agent for 
 [OpenAI gym CarRacing-v0 task](https://gym.openai.com/envs/CarRacing-v0/).
 
+![](runs/example/demo.gif)
+
 ## Setup
 
 Prerequisites:
@@ -41,10 +43,10 @@ tensorboard --logdir ./runs/some_name/tb
 
 Infinite play using trained agent:
 ```
-python -m src.demo.infinite_play --run_name some_name
+python -m src.demo.infinite_play --run_name example --model_file cpk_model_11598144_steps.zip
 ```
 
 Record a video using trained agent (will be in `./runs/some_name/video`):
 ```
-python -m src.demo.record_video --run_name some_name
+python -m src.demo.record_video --run_name example --model_file cpk_model_11598144_steps.zip
 ```
